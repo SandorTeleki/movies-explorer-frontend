@@ -10,9 +10,9 @@ function Main({isLoggedIn}) {
     return (
         <main>
             <Promo/>
-            <AboutProject />
-            <Techs />
-            <AboutMe />
+            <AboutProject id="AboutProject"/>
+            <Techs id="Techs"/>
+            <AboutMe id="AboutMe"/>
         </main>)
   }
   return null

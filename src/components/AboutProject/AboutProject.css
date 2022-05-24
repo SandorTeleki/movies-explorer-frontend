@@ -1,7 +1,7 @@
 .about-project {
   display: flex;
   width: 100%;
-  background-color: #2f2f2f;
+  background-color: #202020;
 }
   
 .section_type_about-project {
@@ -62,12 +62,12 @@
 }
 
 .about-project__project-time_type_frontend {
-  background-color: rgba(52, 86, 243, 1);
-  color: rgba(255, 255, 255, 1);
+  background-color: #3DDC84;
+  color: #202020;
 }
 
 .about-project__project-time_type_backend {
-  background-color: rgba(242, 242, 242, 1);
+  background-color: #424242;
 }
 
 .about-project__project-part {

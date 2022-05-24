@@ -12,8 +12,7 @@ function Header({isLoggedIn, onLogIn}) {
     )
   }
 
-  if (location.pathname === '/' || location.pathname === '/saved-movies' ||
-  location.pathname === '/movies' || location.pathname === '/profile') {
+  if (location.pathname === '/' || location.pathname === '/saved-movies' || location.pathname === '/movies' || location.pathname === '/profile') {
     return(
       <header className={`header ${(!isLoggedIn)? 'header_promo': ''}`}>
         <div className='section section_type_header '>

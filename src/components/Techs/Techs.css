@@ -1,7 +1,7 @@
 .techs {
     display: flex;
     width: 100%;
-    background-color: rgba(245, 245, 245, 1);
+    background-color: #2b2b2b;
 }
   
 .section__heading_type_techs {
@@ -41,7 +41,7 @@
 }
   
 .tech__list-item {
-    background-color: rgba(232, 232, 232, 1);
+    background-color: #2f2f2f;
     border-radius: 10px;
     display: flex;
     font-size: 14px;
