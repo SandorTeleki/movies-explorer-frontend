@@ -76,7 +76,7 @@ function App() {
       onToggle={toggleShortMoviesFilter}/>
     <Routes>
       <Route path={'/'} element={
-        <Main isLoggedIn={false}/>}> 
+        <Main isLoggedIn={isLoggedIn}/>}> 
       </Route>
       <Route path={'/movies'} element={
         <Movies 
