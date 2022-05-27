@@ -8,7 +8,7 @@ function SearchForm({isLoggedIn, isShortMovies, onToggle}) {
     return (<form 
                 className={'search-form'}
                 name={'search-form'}
-                noValidate={true}>
+                placeholder={'Фильмы'}>
             <div className={'section section_type_search-form'}>
             <div className={'search-form__main'}>
                 <input
@@ -16,12 +16,15 @@ function SearchForm({isLoggedIn, isShortMovies, onToggle}) {
                     type={'text'}
                     placeholder={'Фильмы'}
                     required={true}/>
-            <button
+            <div className={'search-form__button-container'}>
+              <button
                 className={'search-form__submit-button'}
                 aria-label={'Кнопка поиска фильмов'}
                 type={'submit'}>
                 {}
-            </button>
+              </button>
+            </div>        
+            
           </div>
           <FilterCheckbox
                 isShortMovies={isShortMovies}

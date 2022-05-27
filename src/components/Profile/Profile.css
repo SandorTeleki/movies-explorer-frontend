@@ -73,7 +73,7 @@
 }
   
 .profile-form__input:focus {
-    /* background-color: rgba(221, 222, 227, 1); */
+    border-bottom: 1px solid #4285F4 ;
     border-radius: 2px;
 }
   
