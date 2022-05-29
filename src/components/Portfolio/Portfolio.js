@@ -7,9 +7,9 @@ function Portfolio() {
         <nav className={'portfolio__links'}>
             <a
                 className={'portfolio__link'}
+                rel={'noreferrer'}
                 href={'https://github.com/SandorTeleki/how-to-learn'}
-                target={'_blank'}
-                rel={'noreferrer'}>
+                target={'_blank'}>
                 Статичный сайт
             </a>
             <a 
@@ -21,7 +21,8 @@ function Portfolio() {
             </a>
             <a
                 className={'portfolio__link portfolio__link_last'}
-                rel={'noreferrer'} href={'https://github.com/SandorTeleki/react-mesto-api-full'}
+                rel={'noreferrer'}
+                href={'https://github.com/SandorTeleki/react-mesto-api-full'}
                 target={'_blank'}>
                 Одностраничное приложение
             </a>

@@ -73,7 +73,7 @@
     height: 34px;
     background-image: url('../../images/search_button.svg');
     background-size: contain;
-    background-color: #2f2f2f;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: right;
     border: none;
