@@ -7,9 +7,9 @@ function Portfolio() {
         <nav className={'portfolio__links'}>
             <a
                 className={'portfolio__link'}
+                rel={'noreferrer'}
                 href={'https://github.com/SandorTeleki/how-to-learn'}
-                target={'_blank'}
-                rel={'noreferrer'}>
+                target={'_blank'}>
                 Статичный сайт
             </a>
             <a 
