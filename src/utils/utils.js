@@ -1,87 +1,40 @@
-import image1 from '../images/movie_card1.jpg';
-import image2 from '../images/movie_card2.jpg';
-import image3 from '../images/movie_card3.jpg';
-import image4 from '../images/movie_card4.jpg';
-import image5 from '../images/movie_card5.jpg';
-import image6 from '../images/movie_card6.jpg';
-import image7 from '../images/movie_card7.jpg';
-import image8 from '../images/movie_card8.jpg';
-import image9 from '../images/movie_card9.jpg';
-import image10 from '../images/movie_card10.jpg';
-import image11 from '../images/movie_card11.jpg';
-import image12 from '../images/movie_card12.jpg';
+export const MOVIE_IMAGE_BASE_URL = 'https://api.nomoreparties.co';
+export const MOVIES_BASE_URL = 'https://api.nomoreparties.co/beatfilm-movies';
+export const BASE_URL = 'https://api.moviesexplorer.teleki.nomoredomains.xyz';
+export const MINUTES_IN_HOUR = 60;
+export const SHORT_MOVIE_DURATION = 40;
+export const BIG_SCREEN_MOVIES_QTY = 12;
+export const MIDDLE_SCREEN_MOVIES_QTY = 8;
+export const SMALL_SCREEN_MOVIES_QTY = 5;
+export const MORE_MOVIES_BIG_SCREEN_QTY = 3;
+export const MORE_MOVIES_SMALL_SCREEN_QTY = 2;
+export const BIG_SCREEN = 768;
+export const SMALL_SCREEN = 480;
 
-export const movies = [
-  {
-  id: 1,
-  imageLink: image1,
-  heading: 'В погоне за Бенкси',
-  duration: '27 минут'
-  },
-  {
-    id: 2,
-    imageLink: image2,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 3,
-    imageLink: image3,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 4,
-    imageLink: image4,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 5,
-    imageLink: image5,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 6,
-    imageLink: image6,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 7,
-    imageLink: image7,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 8,
-    imageLink: image8,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 9,
-    imageLink: image9,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-  id: 10,
-  imageLink: image10,
-  heading: 'В погоне за Бенкси',
-  duration: '27 минут'
-},
-  {
-    id: 11,
-    imageLink: image11,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-  {
-    id: 12,
-    imageLink: image12,
-    heading: 'В погоне за Бенкси',
-    duration: '27 минут'
-  },
-]
+export function searchMovies(movies, isShortMovies, searchInput) {
+  let searchedMovies;
+  if (!movies) {
+    return null
+  } else if (isShortMovies) {
+    searchedMovies = movies.filter((movie) => {
+      return (movie.nameRU.toLowerCase().includes(searchInput.toLowerCase().trim()) || movie.description.toLowerCase().includes(searchInput.toLowerCase().trim())) && movie.duration <= SHORT_MOVIE_DURATION;
+    })
+  } else {
+    searchedMovies = movies.filter((movie) => {
+      return (movie.nameRU.toLowerCase().includes(searchInput.toLowerCase().trim()) || movie.description.toLowerCase().includes(searchInput.toLowerCase().trim()))
+    })
+  }
+  return searchedMovies;
+}
+
+export function saveToLocalStorage(searchedMovies, isShortMovies, searchInput) {
+  localStorage.setItem('searchInput', searchInput);
+  localStorage.setItem('isShortMovies', JSON.stringify(isShortMovies));
+  localStorage.setItem('searchedMovies', JSON.stringify(searchedMovies));
+}
+
+export function showShortMovies(showedMovies) {
+  return showedMovies.filter((movie) => {
+    return movie.duration <= SHORT_MOVIE_DURATION;
+  })
+}

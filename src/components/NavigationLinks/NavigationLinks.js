@@ -2,7 +2,7 @@ import './NavigationLinks.css';
 import {NavLink} from 'react-router-dom';
 
 function NavigationLinks({showBurgerMenuStyle, onClose}) {
-  return (<>
+    return (<>
         <div className={`navigation__block-movies 
         ${showBurgerMenuStyle ? 'navigation__block-movies_type_burger' : ''}`}>
             <li className='navigation__link'>
@@ -32,9 +32,11 @@ function NavigationLinks({showBurgerMenuStyle, onClose}) {
                 onClick={onClose}
                 className='navigation__link-item navigation__link-item_type_account'>
                 Аккаунт
-                <div className='navigation__account-logo'></div>
-            </NavLink></li>
-    </>)
+                <div className='navigation__account-logo'>{}</div>
+            </NavLink>
+        </li>
+        </>
+    )
 }
 
 export default NavigationLinks;

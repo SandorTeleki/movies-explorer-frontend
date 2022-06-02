@@ -1,25 +1,24 @@
 import './AuthForm.css';
-import {useNavigate} from 'react-router-dom';
 
-function AuthForm({name, heading, submitButton, children}) {
-  const navigate = useNavigate();
+function AuthForm({name, heading, submitButton, children, onSubmit, isValid}) {
   return (
-    <form 
-        className= {`auth-form auth-form_type_${name}`} 
-        name={`${name}-form`}
-        noValidate={true} 
-        onSubmit={()=>{navigate('/')}}>
-    <h2 className='auth-form__heading'>
+    <form
+      className={`auth-form auth-form_type_${name}`}
+      name={`${name}-form`}
+      noValidate={true}
+      onSubmit={onSubmit}>
+      <h2 className='auth-form__heading'>
         {heading}
-    </h2>
+      </h2>
       {children}
-    <button 
-        className={`auth-form__submit-button auth-form__submit-button_type_${name}`}
-        type={'submit'}>
+      <button
+        className={`auth-form__submit-button auth-form__submit-button_type_${name}
+        ${!isValid && 'auth-form__submit-button_inactive'}`}
+        type={'submit'}
+        disabled={!isValid}>
         {submitButton}
-    </button>
-    </form>
-  )
+      </button>
+    </form>)
 }
 
 export default AuthForm;
