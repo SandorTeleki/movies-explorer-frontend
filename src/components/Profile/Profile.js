@@ -58,12 +58,12 @@ function Profile({onEditProfile, isEditProfile, onEditProfileClick, onLogOut}) {
           onClick={onEditProfileClick}>
           Редактировать
         </button>
-          <Link
-            className='profile-form__button profile-form__button_type_logout'
-            to={'/'}
-            onClick={onLogOut}>
-            Выйти из аккаунта
-          </Link>
+        <Link
+          className='profile-form__button profile-form__button_type_logout'
+          to={'/'}
+          onClick={onLogOut}>
+          Выйти из аккаунта
+        </Link>
       </>)
     }
   }

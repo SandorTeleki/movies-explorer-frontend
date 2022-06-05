@@ -5,9 +5,15 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, .3);
-    display: flex;
+    display: none;
+    pointer-events: none;
 }
-  
+
+.infotooltip_opened {
+    display: flex;
+    pointer-events: all;
+}
+
 .infotooltip__container {
     width: 350px;
     height: 250px;
@@ -59,6 +65,10 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.infotooltip__icon_type_success {
+    background-image: url('../../images/infotooltip_icon_success.svg');
+  }
   
 @media screen and (max-width: 769px) {
     .infotooltip__container {

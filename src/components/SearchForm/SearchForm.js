@@ -44,12 +44,14 @@ function SearchForm({ isShortMovies, onToggle, onSearchMovies, searchCount, onSe
               name={'searchInput'}
               value={validator.values.searchInput || ''}
               onChange={validator.handleChange}/>
-            <button 
-              className={'search-form__submit-button'}
-              aria-label={'Кнопка поиска фильмов'}
-              type={'submit'}>
-              {}
-            </button>
+            <div className={'search-form__button-container'}>
+              <button 
+                className={'search-form__submit-button'}
+                aria-label={'Кнопка поиска фильмов'}
+                type={'submit'}>
+                {}
+              </button>
+            </div>
           </div>
           <FilterCheckbox
             isShortMovies={isShortMovies}
@@ -73,13 +75,15 @@ function SearchForm({ isShortMovies, onToggle, onSearchMovies, searchCount, onSe
             disabled={disabled}
             value={validatorForSavedMovies.values.searchInput || ''}
             onChange={validatorForSavedMovies.handleChange}/>
-          <button
-            className={'search-form__submit-button'}
-            aria-label={'Кнопка поиска фильмов'}
-            disabled={disabled}
-            type={'submit'}>
-            {}
-          </button>
+          <div className={'search-form__button-container'}>
+            <button
+              className={'search-form__submit-button'}
+              aria-label={'Кнопка поиска фильмов'}
+              disabled={disabled}
+              type={'submit'}>
+              {}
+            </button>
+          </div>
         </div>
         <FilterCheckbox
           isShortMovies={isShortMovies}
