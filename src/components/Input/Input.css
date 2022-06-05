@@ -23,7 +23,7 @@
 }
   
 .auth-form__input:focus {
-    background-color: #202020;
+    border-bottom: 1px solid #4285F4 ;
     outline: none;
 }
   

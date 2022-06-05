@@ -8,7 +8,7 @@ import AboutMe from '../AboutMe/AboutMe';
 function Main({isLoggedIn}) {
   if (!isLoggedIn) {
     return (
-        <main>
+        <main className='main'>
             <Promo/>
             <AboutProject id="AboutProject"/>
             <Techs id="Techs"/>
