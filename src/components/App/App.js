@@ -224,72 +224,47 @@ function App() {
   }
 
 
-  return (
-    <>
-    <CurrentUserContext.Provider value={currentUser}>
+  return (<><CurrentUserContext.Provider value={currentUser}>
     <Header isLoggedIn={isLoggedIn}/>
     <Routes>
-      <Route 
-        path={'/'}
-        element={<Main isLoggedIn={isLoggedIn}/>}> </Route>
-        {isUserChecked && <>
-        <Route
-          path={'/movies'}
-          element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <Movies
-                onLike={handleMovieLike}
-                isLoading={isLoading}
-                onSearchMovies={handleSearchMovies}
-                errorMessage={errorMoviesMessage}
-                savedMovies={savedMovies}
-                searchCount={searchCount}/>
-              </ProtectedRoute>}>{}
-        </Route>
-        <Route 
-          path={'/saved-movies'}
-          element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <SavedMovies 
-                savedMovies={savedMovies}
-                isLoading={isLoading}
-                onLike={handleMovieLike}
-                onDislike={handleMovieDislike}/>
-            </ProtectedRoute>}>
-        </Route>
-        <Route 
-          path={'/profile'}
-          element={
-            <ProtectedRoute 
-              isLoggedIn={isLoggedIn}>
-              <Profile onEditProfile={handleEditProfile}
-                isEditProfile={isEditProfile}
-                onEditProfileClick={handleEditProfileClick}
-                onLogOut={handleLogOut}
-                editProfileMessage={editProfileMessage}/>
-            </ProtectedRoute>}>
-              {}
-          </Route>
+      <Route path={'/'}
+             element={<Main isLoggedIn={isLoggedIn}/>}> </Route>
+      {isUserChecked && <>
+        <Route path={'/movies'}
+               element={<ProtectedRoute isLoggedIn={isLoggedIn}>
+                 <Movies
+                        onLike={handleMovieLike}
+                         isLoading={isLoading}
+                         onSearchMovies={handleSearchMovies}
+                         errorMessage={errorMoviesMessage}
+                         savedMovies={savedMovies}
+                         searchCount={searchCount}/></ProtectedRoute>}>{}</Route>
+        <Route path={'/saved-movies'}
+               element={<ProtectedRoute isLoggedIn={isLoggedIn}>
+                 <SavedMovies savedMovies={savedMovies}
+                              isLoading={isLoading}
+                              onLike={handleMovieLike}
+                              onDislike={handleMovieDislike}/></ProtectedRoute>}> </Route>
+        <Route path={'/profile'}
+               element={
+                 <ProtectedRoute isLoggedIn={isLoggedIn}><Profile onEditProfile={handleEditProfile}
+                                                                  isEditProfile={isEditProfile}
+                                                                  onEditProfileClick={handleEditProfileClick}
+                                                                  onLogOut={handleLogOut}
+                                                                  editProfileMessage={editProfileMessage}/></ProtectedRoute>}>{}</Route>
       </>}
-      <Route
-        path={'/signup'}
-        element={<Register onRegister={handleRegister}/>}>
-      </Route>
-      <Route
-        path={'/signin'}
-        element={<Login onLogin={handleLogin}/>}>
-      </Route>
-      <Route
-        path={'*'}
-        element={<NotFound/>}>
-      </Route>
+      <Route path={'/signup'}
+             element={<Register onRegister={handleRegister}/>}> </Route>
+      <Route path={'/signin'}
+             element={<Login onLogin={handleLogin}/>}> </Route>
+      <Route path={'*'}
+             element={<NotFound/>}> </Route>
     </Routes>
     <Footer isLoggedIn={isLoggedIn}/>
-    <InfoToolTip 
-      errorMessage={errorMessage}
-      isOpen={isInfoToolTipOpen}
-      onClose={closePopups}
-      editProfileMessage={editProfileMessage}/>
+    <InfoToolTip errorMessage={errorMessage}
+                 isOpen={isInfoToolTipOpen}
+                 onClose={closePopups}
+                 editProfileMessage={editProfileMessage}/>
     {(isLoading && (location.pathname !== '/movies' && location.pathname !== '/saved-movies')) &&
       <Preloader/>}
   </CurrentUserContext.Provider>

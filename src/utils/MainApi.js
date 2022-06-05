@@ -1,6 +1,5 @@
 import {BASE_URL} from './utils';
 
-
 const headers = {
   "Content-Type": "application/json",
 }

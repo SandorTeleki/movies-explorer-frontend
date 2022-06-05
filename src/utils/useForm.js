@@ -53,7 +53,6 @@ function useForm(initialValues) {
     setValues,
     setErrors
   }
-
 }
 
 export default useForm
