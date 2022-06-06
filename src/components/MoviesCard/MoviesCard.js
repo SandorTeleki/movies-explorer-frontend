@@ -52,35 +52,39 @@ function MoviesCard(props) {
     onDislike(props._id)
   }
 
-  return (<div className={'movies-card'}>
-    <a 
-      className={'movies-card__trailer-link'}
-      target={'_blank'}
-      rel='noreferrer'
-      href={trailerLink}><img className={'movies-card__image'}
-      alt={`Обложка фильма: ${nameRU}`}
-      src={`${image}`}/>
-    </a>
-    <div className={'movies-card__description'}>
-      <h3 className={'movies-card__heading'}>
-        {nameRU}
-      </h3>
-      {location.pathname === '/saved-movies' ? <button 
-        type={'button'}
-        className={'movies-card__button movies-card__button_type_delete'}
-        onClick={handleDislike}
-        aria-label={'Иконка удаление фильма из списка сохраненных фильмов'}>{}</button> :
-        <button 
+  return (
+    <div className={'movies-card'}>
+      <div className={'movies-card__description'}>
+        <h3 className={'movies-card__heading'}>
+          {nameRU}
+        </h3>
+        <p className={'movies-card__duration'}>
+          {duration < MINUTES_IN_HOUR ? `${displayDuration()}м` : `${displayDuration().hours}ч ${displayDuration().minutes}м`}
+        </p>
+        
+      </div>
+      <a 
+        className={'movies-card__trailer-link'}
+        target={'_blank'}
+        rel='noreferrer'
+        href={trailerLink}><img className={'movies-card__image'}
+        alt={`Обложка фильма: ${nameRU}`}
+        src={`${image}`}/>
+      </a>
+      <div className={'movies-card__reaction'}>
+        {location.pathname === '/saved-movies' ? <button 
           type={'button'}
-          aria-label={'Иконка сохранения фильма в список сохраненных фильмов'}
-          className={`movies-card__button movies-card__button_type_like ${isLiked&& 'movies-card__button_type_like_liked'}`}
-          onClick={handleLike}>{}</button>}
+          className={'movies-card__button movies-card__button_type_delete'}
+          onClick={handleDislike}
+          aria-label={'Иконка удаление фильма из списка сохраненных фильмов'}>{}</button> :
+          <button 
+            type={'button'}
+            aria-label={'Иконка сохранения фильма в список сохраненных фильмов'}
+            className={`movies-card__button movies-card__button_type_like ${isLiked&& 'movies-card__button_type_like_liked'}`}
+            onClick={handleLike}>{}</button>}
+      </div>
     </div>
-    <p className={'movies-card__duration'}>
-      {duration < MINUTES_IN_HOUR ? `${displayDuration()}м` : `${displayDuration().hours}ч ${displayDuration().minutes}м`}
-    </p>
-  </div>)
-
+  )
 }
 
 export default MoviesCard;
