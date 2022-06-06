@@ -60,7 +60,7 @@ function SavedMovies({savedMovies, isLoading, onLike, onDislike}) {
 
   if (isLoading) {
     return (<>
-      <SearchForm
+      <SearchForm 
         isShortMovies={isShortMoviesInSM}
         disabled={!savedMovies.length}
         onSearchSavedMovies={handleSearchSavedMovies}
@@ -82,18 +82,20 @@ function SavedMovies({savedMovies, isLoading, onLike, onDislike}) {
           <button 
             type={'button'}
             className={'saved-movies__return-button'}
-            onClick={handleSearchClear}>Вернуться</button> : null}
+            onClick={handleSearchClear}>
+            Вернуться
+          </button> : null}
       </div>
     </>)
   } else {
     return (<>
-      <SearchForm
+      <SearchForm 
         isShortMovies={isShortMoviesInSM}
         onSearchSavedMovies={handleSearchSavedMovies}
         disabled={!savedMovies.length}
         onToggle={toggleShortMoviesFilter}/>
       <div className={'saved-movies'}>
-        <MoviesCardList
+        <MoviesCardList 
           showedMovies={showedMovies}
           savedMovies={savedMovies}
           onLike={onLike}

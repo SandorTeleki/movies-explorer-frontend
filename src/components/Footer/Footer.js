@@ -24,23 +24,25 @@ function Footer() {
       <footer className='footer'>
         <div className='section section_type_footer-signup'>
           <span className='footer__auth-text footer__auth-text_type_question'>Уже зарегистрированы?</span>
-            <Link className='footer__auth-text footer__auth-text_type_link' to='/signin'>
-                Войти
-            </Link>
+          <Link
+            className='footer__auth-text footer__auth-text_type_link'
+            to='/signin'>
+            Войти
+          </Link>
         </div>
-      </footer>
-    )
+      </footer>)
   } else if (location.pathname === '/signin') {
     return (
       <footer className='footer'>
         <div className='section section_type_footer-signup'>
           <span className='footer__auth-text footer__auth-text_type_question'>Еще не зарегистрированы?</span>
-          <Link className='footer__auth-text footer__auth-text_type_link' to='/signup'>
-              Регистрация
+          <Link
+            className='footer__auth-text footer__auth-text_type_link'
+            to='/signup'>
+            Регистрация
           </Link>
         </div>
-      </footer>
-    )
+      </footer>)
   }
   return null
 }

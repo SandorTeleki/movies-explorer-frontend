@@ -44,12 +44,11 @@ function Navigation({isLoggedIn}) {
   if (isLoggedIn && !showNavBurgerButton) {
     return (
       <nav className='navigation'>
-      <NavigationLinks />
+        <NavigationLinks/>
       </nav>)
   } else if (isLoggedIn && showNavBurgerButton) {
-    return (
-      <nav className='navigation navigation_type_burger'>
-      <button
+    return (<nav className='navigation navigation_type_burger'>
+      <button 
         className={'navigation__burger-button'}
         type={'button'}
         aria-label={'Кнопка навигации'}
@@ -63,19 +62,19 @@ function Navigation({isLoggedIn}) {
   } else {
     return (
       <nav className='navigation navigation_notLoggedIn'>
-      <Link 
-        className='navigation__link-item navigation__link-item_type_authorization'
-        to={'/signup'}>
-        Регистрация
-      </Link>
-      <Link
-        className='navigation__link-item navigation__link-item_type_authorization'
-        to={'/signin'}>
-        <button className='navigation__button'>
-          Войти
-        </button>
-      </Link>
-    </nav>)
+        <Link 
+          className='navigation__link-item navigation__link-item_type_authorization'
+          to={'/signup'}>
+          Регистрация
+        </Link>
+        <Link
+          className='navigation__link-item navigation__link-item_type_authorization'
+          to={'/signin'}>
+          <button className='navigation__button'>
+            Войти
+          </button>
+        </Link>
+      </nav>)
   }
 }
 

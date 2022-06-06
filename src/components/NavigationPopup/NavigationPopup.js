@@ -11,7 +11,6 @@ function NavigationPopup({showBurgerMenu, onClose}) {
   }
 
   useEffect(() => {
-
     function handleEscClose(e) {
       if (e.key === 'Escape') {
         onClose();
@@ -28,29 +27,28 @@ function NavigationPopup({showBurgerMenu, onClose}) {
     <div
       className={'navigation-popup'}
       onClick={handleOverlayClose}>
-        <ul className={'navigation-popup__container'}>
-            <button
-                type={'button'}
-                aria-label={'Кнопка закрытия модального окна навигации'}
-                className={'navigation-popup__close-button'}
-                onClick={onClose}>
-                {}
-            </button>
-        <li className={`navigation__link ${showBurgerMenu? 'navigation__link_type_main' : ''}`}>
-            <Link
-                className={`navigation__link-item
-                ${showBurgerMenu? 'navigation__link-item_type_burger' : ''}`}
-                to={'/'}
-                onClick={onClose}>
-                Главная
-            </Link>
+      <ul className={'navigation-popup__container'}>
+        <button 
+          type={'button'}
+          aria-label={'Кнопка закрытия модального окна навигации'}
+          className={'navigation-popup__close-button'}
+          onClick={onClose}>
+          {}
+        </button>
+        <li className={`navigation__link ${showBurgerMenu ? 'navigation__link_type_main' : ''}`}>
+          <Link
+            className={`navigation__link-item
+            ${showBurgerMenu ? 'navigation__link-item_type_burger' : ''}`}
+            to={'/'}
+            onClick={onClose}>
+            Главная
+          </Link>
         </li>
         <NavigationLinks
-            showBurgerMenuStyle={showBurgerMenu}
-            onClose={onClose}/>
+          showBurgerMenuStyle={showBurgerMenu}
+          onClose={onClose}/>
       </ul>
-    </div>
-  )
+    </div>)
 }
 
 export default NavigationPopup;

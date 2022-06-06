@@ -7,9 +7,8 @@ function Input({name, error, ...rest}) {
           <input 
               className='auth-form__input' 
               name={name}
-              {...rest} 
-          />
-    </label>
+              {...rest}/>
+      </label>
       <span className='auth-form__error'>
           {error}
       </span>

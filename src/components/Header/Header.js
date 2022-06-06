@@ -8,7 +8,9 @@ function Header({isLoggedIn}) {
 
   function Logo() {
     return (
-      <Link to={'/'}><img className='logo' alt='Логотип проекта' src={logo}/></Link>
+      <Link to={'/'}>
+        <img className='logo' alt='Логотип проекта' src={logo}/>
+      </Link>
     )
   }
 

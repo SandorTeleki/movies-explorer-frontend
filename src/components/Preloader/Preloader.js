@@ -6,7 +6,7 @@ const Preloader = ({movies}) => {
         <div className={`preloader ${movies && 'preloader_type_movies'}`}>
             <div className="preloader__container">
                 <span className="preloader__round">
-                    {}
+                {}
                 </span>
             </div>
         </div>

@@ -132,7 +132,7 @@ function Movies({
     </>)
   } else if (errorMessage) {
     return (<>
-      <SearchForm
+      <SearchForm 
         isShortMovies={isShortMovies}
         onSearchMovies={onSearchMovies}
         searchCount={searchCount}
@@ -160,8 +160,7 @@ function Movies({
             <button
               type={'button'}
               onClick={handleShowMoreMoviesClick}
-              className={'movies__more-films-button'}>
-              Ещё
+              className={'movies__more-films-button'}>Ещё
             </button>
           </div> : null}
       </div>

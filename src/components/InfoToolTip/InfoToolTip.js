@@ -29,20 +29,22 @@ function InfoToolTip({isOpen, errorMessage, onClose, editProfileMessage}) {
       className={`infotooltip ${isOpen && 'infotooltip_opened'}`}
       onClick={handleOverlayClose}>
       <div className={'infotooltip__container'}>
-      <button 
-          type={'button'}
-          className={'infotooltip__close-button'}
-          onClick={onClose}
-          aria-label={'Кнопка закрытия модального окна'}>
-          {}
-      </button>
-      <p className={'infotooltip__message'}>{editProfileMessage ? editProfileMessage : errorMessage}</p>
-      <div 
-          className={`infotooltip__icon ${editProfileMessage && 'infotooltip__icon_type_success'}`}
-          aria-label={'Иконка модального окна'}>
-          {}
+        <button 
+            type={'button'}
+            className={'infotooltip__close-button'}
+            onClick={onClose}
+            aria-label={'Кнопка закрытия модального окна'}>
+            {}
+        </button>
+        <p className={'infotooltip__message'}>
+          {editProfileMessage ? editProfileMessage : errorMessage}
+        </p>
+        <div 
+            className={`infotooltip__icon ${editProfileMessage && 'infotooltip__icon_type_success'}`}
+            aria-label={'Иконка модального окна'}>
+            {}
+        </div>
       </div>
-    </div>
     </div>
   )
 }

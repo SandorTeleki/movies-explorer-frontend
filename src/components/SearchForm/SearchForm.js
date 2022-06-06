@@ -30,13 +30,13 @@ function SearchForm({ isShortMovies, onToggle, onSearchMovies, searchCount, onSe
 
   if ((location.pathname === '/movies' || location.pathname === '/')) {
     return (
-      <form
+      <form 
         className={'search-form'}
         name={'search-form'}
         noValidate={true} onSubmit={handleFormSubmit}>
         <div className={'section section_type_search-form'}>
           <div className={'search-form__main'}>
-            <input
+            <input 
               className={'search-form__input'}
               type={'text'}
               placeholder={'Фильмы'}
@@ -44,16 +44,14 @@ function SearchForm({ isShortMovies, onToggle, onSearchMovies, searchCount, onSe
               name={'searchInput'}
               value={validator.values.searchInput || ''}
               onChange={validator.handleChange}/>
-            <div className={'search-form__button-container'}>
-              <button 
-                className={'search-form__submit-button'}
-                aria-label={'Кнопка поиска фильмов'}
-                type={'submit'}>
-                {}
-              </button>
-            </div>
+            <button
+              className={'search-form__submit-button'}
+              aria-label={'Кнопка поиска фильмов'}
+              type={'submit'}>
+              {}
+            </button>
           </div>
-          <FilterCheckbox
+          <FilterCheckbox 
             isShortMovies={isShortMovies}
             onToggle={onToggle}/>
         </div>
@@ -66,7 +64,7 @@ function SearchForm({ isShortMovies, onToggle, onSearchMovies, searchCount, onSe
         noValidate={true} onSubmit={handleSavedMoviesFormSubmit}>
       <div className={'section section_type_search-form'}>
         <div className={'search-form__main'}>
-          <input
+          <input 
             className={'search-form__input'}
             type={'text'}
             placeholder={'Фильмы'}
@@ -75,23 +73,20 @@ function SearchForm({ isShortMovies, onToggle, onSearchMovies, searchCount, onSe
             disabled={disabled}
             value={validatorForSavedMovies.values.searchInput || ''}
             onChange={validatorForSavedMovies.handleChange}/>
-          <div className={'search-form__button-container'}>
-            <button
-              className={'search-form__submit-button'}
-              aria-label={'Кнопка поиска фильмов'}
-              disabled={disabled}
-              type={'submit'}>
-              {}
-            </button>
-          </div>
+          <button 
+            className={'search-form__submit-button'}
+            aria-label={'Кнопка поиска фильмов'}
+            disabled={disabled}
+            type={'submit'}>
+            {}
+          </button>
         </div>
-        <FilterCheckbox
+        <FilterCheckbox 
           isShortMovies={isShortMovies}
           onToggle={onToggle}
           disabled={disabled}/>
       </div>
-    </form>
-    )
+    </form>)
   }
   return null
 }
