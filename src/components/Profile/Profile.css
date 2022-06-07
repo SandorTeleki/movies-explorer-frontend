@@ -98,16 +98,23 @@
     line-height: 1.2;
     font-weight: 400;
     transition: color .3s ease;
-    margin: 185px auto 0;
+    text-decoration: none;
+    color: #EE3465;
+    /* margin: 185px auto 0; */
 }
-  
+
+.profile-form__button:hover {
+    transition: opacity .3s ease;
+    color: rgba(238, 52, 101, 0.5);
+}
+
 .profile-form__button_type_edit {
     background-color: #202020;
     color: #fff;
 }
   
 .profile-form__button_type_edit:hover {
-    color: rgba(0, 0, 0, .7);
+    color: rgb(144, 144, 144);
     cursor: pointer;
 }
   
@@ -125,7 +132,19 @@
     background-color: rgba(248, 248, 248, 1);
     color: rgba(194, 194, 194, 1);
 }
+
+.profile-form__button_type_logout {
+    font-weight: 500;
+    margin: 0 auto 0;
+    text-align: center;
+    text-decoration: none;
+    transition: color .3s ease;
+  }
   
+  .profile-form__button_type_logout:hover  {
+    cursor: pointer;
+  }
+
 @media screen and (max-width: 769px) {
     .section_type_profile {
         margin: 155px 70px 0;

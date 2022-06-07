@@ -23,9 +23,11 @@
     font-size: 14px;
     line-height: 1.2;
     text-decoration: none;
-    color: rgba(52, 86, 243, 1);
+    color: #4285F4;
     margin: 184px auto 60px;
     transition: opacity .3s ease;
+    background: none;
+	border: none;
 }
 
 .not-found__return-link:hover {

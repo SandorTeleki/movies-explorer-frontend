@@ -1,10 +1,9 @@
 import './Footer.css';
 import {useLocation, Link } from 'react-router-dom';
 
-function Footer({isLoggedIn, onLogOut, isEditProfile}) {
+function Footer() {
   const location = useLocation();
-  if (location.pathname === '/' || location.pathname === '/saved-movies' ||
-    location.pathname === '/movies') {
+  if (location.pathname === '/' || location.pathname === '/saved-movies' || location.pathname === '/movies') {
     return (
       <footer className='footer'>
         <div className='section section_type_footer'>
@@ -20,39 +19,30 @@ function Footer({isLoggedIn, onLogOut, isEditProfile}) {
         </div>
       </footer>
     )
-  } else if (location.pathname ==='/profile') {
-    return (
-      <footer className='footer'>
-        <div className='section section_type_footer'>
-          {!isEditProfile&& 
-          <Link className='footer__logout-link footer-text' to={'/'} onClick={onLogOut}>
-              Выйти из аккаунта
-          </Link>}
-        </div>
-      </footer>
-    )
   } else if (location.pathname === '/signup') {
     return (
       <footer className='footer'>
         <div className='section section_type_footer-signup'>
           <span className='footer__auth-text footer__auth-text_type_question'>Уже зарегистрированы?</span>
-            <Link className='footer__auth-text footer__auth-text_type_link' to='/signin'>
-                Войти
-            </Link>
+          <Link
+            className='footer__auth-text footer__auth-text_type_link'
+            to='/signin'>
+            Войти
+          </Link>
         </div>
-      </footer>
-    )
+      </footer>)
   } else if (location.pathname === '/signin') {
     return (
       <footer className='footer'>
         <div className='section section_type_footer-signup'>
           <span className='footer__auth-text footer__auth-text_type_question'>Еще не зарегистрированы?</span>
-          <Link className='footer__auth-text footer__auth-text_type_link' to='/signup'>
-              Регистрация
+          <Link
+            className='footer__auth-text footer__auth-text_type_link'
+            to='/signup'>
+            Регистрация
           </Link>
         </div>
-      </footer>
-    )
+      </footer>)
   }
   return null
 }
